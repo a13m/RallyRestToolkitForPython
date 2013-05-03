@@ -274,7 +274,7 @@ class RallyRESTResponse(object):
             exception_type, value, traceback = sys.exc_info()
             sys.stderr.write('%s: %s\n' % (exception_type, value)) 
             sys.stderr.write(traceback)
-            sys.exit(9)
+            raise ex
             return []
 
         content = json.loads(response.content)

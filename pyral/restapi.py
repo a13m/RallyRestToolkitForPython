@@ -21,7 +21,7 @@ import json
 import string
 import base64
 
-import requests   
+import requests0 as requests
 
 # intra-package imports
 from .config  import PROTOCOL, SERVER, WS_API_VERSION, WEB_SERVICE, RALLY_REST_HEADERS
@@ -1039,7 +1039,7 @@ class Rally(object):
         except Exception as ex:
             exception_type, value, traceback = sys.exc_info()
             warning('%s: %s\n' % (exception_type, value)) 
-            sys.exit(9)
+            raise ex
 
         if self._log:
             self._logDest.write('%s %s %s\n' % (timestamp(), response.status_code, resource))
